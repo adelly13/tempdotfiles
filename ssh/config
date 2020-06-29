@@ -1,0 +1,7 @@
+Host tanpi
+  HostName tanpi
+  User pi
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/github_id_rsa
