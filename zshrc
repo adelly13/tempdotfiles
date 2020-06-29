@@ -2,10 +2,21 @@
 PROMPT='%n %. %% '
 
 
-# Shortcuts
-alias 'bk=cd ..'
-alias 'clr=clear'
-alias 'holdmybeer=cd ~/.dotfiles && rm Brewfile && brew bundle dump'
+# Terminal shortcuts
+alias bk='cd ..'
+alias clr='clear'
+alias la='ls -a'
+alias v='vim'
+
+# Git shortcuts
+alias gi='git init'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+
+
+# Rewrite Brewfile
+alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump'
 
 
 # Recursively remove .DS_Store files
@@ -22,5 +33,9 @@ function myip() {
 }
 
 
-# Flutter Installation
+# Flutter installation
 export PATH="$PATH:/Users/tanay/Documents/Programming/SDKs/flutter/bin"
+
+# Homebrew sbin
+export PATH="/usr/local/sbin:$PATH"
+
