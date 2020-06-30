@@ -8,6 +8,7 @@
     ~/.vimrc: vimrc
     ~/.vim: vim 
     ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux.conf
     ~/.hammerspoon: hammerspoon
 
 - shell:
