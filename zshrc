@@ -1,7 +1,6 @@
 # Prompt
 PROMPT='%n %. %% '
 
-
 # Terminal shortcuts
 alias bk='cd ..'
 alias clr='clear'
@@ -16,7 +15,7 @@ alias gc='git commit'
 
 
 # Rewrite Brewfile
-alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump'
+alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
 
 
 # Recursively remove .DS_Store files

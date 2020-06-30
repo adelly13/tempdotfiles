@@ -8,6 +8,7 @@
     ~/.vimrc: vimrc
     ~/.vim: vim 
     ~/.zshrc: zshrc
+    ~/.hammerspoon: hammerspoon
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
