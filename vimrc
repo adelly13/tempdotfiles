@@ -1,18 +1,22 @@
 set nocompatible " not compatible with vi
 
+
 " -----------------
 " Syntax and indent
 " -----------------
 syntax on " enable syntax highlighting
-set tabstop=4 " width 4 for tabs
+set tabstop=2 " width 2 for tabs
 set showmatch " show matching braces when text indicator is over them
+
 
 " --------------------
 " Basic editing config
 " --------------------
+:let mapleader=',' " leader key!
 :imap jj <Esc> " map <Esc> to jj 
-map <C-o> :NERDTreeToggle<CR> " set nerdtree toggle
 colorscheme simple-dark
+set updatetime=300 " shorter updatetime makes it seem more responsive
+set hidden
 set shortmess+=I " disable startup message
 set nu " number of lines
 set backspace=indent,eol,start " allow backspacing over everything
@@ -22,6 +26,7 @@ set incsearch " incremental search (as string is being typed)
 " smart case-sensitive search
 set ignorecase
 set smartcase
+
 
 " ------
 " Splits
@@ -33,27 +38,54 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+
 " ------- 
 " Plugins
 " -------
 " install and run vim-plug on first run
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim'
-Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
+Plug 'itchyny/lightline.vim' " bottom status line
+Plug 'mattn/emmet-vim' " emmet
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-commentary' " comment out selected lines with `gc`
+Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+
+" ------------------
+" Plugin Preferences
+" ------------------
+let g:user_emmet_leader_key='<leader>' " expand emmet with `<leader>,`
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_enable_on_vim_startup = 1
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']} " ale linters
+let g:ale_completion_enabled = 1 " ale completion
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+inoremap <silent><expr> <Tab>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+" navigate the completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " status line color
 let g:lightline = {
-      \ 'colorscheme': 'deus'
-      \ }
+	\ 'colorscheme': 'deus'
+  \ }
 

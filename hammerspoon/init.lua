@@ -34,3 +34,4 @@ end)
 hs.hotkey.bind(hyper, "l", function()
   hs.caffeinate.lockScreen()
 end)
+
