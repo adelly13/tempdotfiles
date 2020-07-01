@@ -5,7 +5,10 @@ set nocompatible " not compatible with vi
 " Syntax and indent
 " -----------------
 syntax on " enable syntax highlighting
+set hls is " set highlighting on search
 set tabstop=2 " width 2 for tabs
+set softtabstop=0 noexpandtab
+set shiftwidth=2
 set showmatch " show matching braces when text indicator is over them
 
 
@@ -14,6 +17,7 @@ set showmatch " show matching braces when text indicator is over them
 " --------------------
 :let mapleader=',' " leader key!
 :imap jj <Esc> " map <Esc> to jj 
+map <leader>/ :nohlsearch<CR>
 colorscheme simple-dark
 set updatetime=300 " shorter updatetime makes it seem more responsive
 set hidden
@@ -46,6 +50,7 @@ nnoremap <C-L> <C-W><C-L>
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ddfiletype indent on " indents for HTML
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -57,6 +62,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-commentary' " comment out selected lines with `gc`
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 
