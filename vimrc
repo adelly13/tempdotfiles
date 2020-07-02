@@ -15,9 +15,9 @@ set showmatch " show matching braces when text indicator is over them
 " --------------------
 " Basic editing config
 " --------------------
-:let mapleader=',' " leader key!
-:imap jj <Esc> " map <Esc> to jj 
-map <leader>/ :nohlsearch<CR>
+let mapleader=',' " leader key!
+imap jj <Esc> " map <Esc> to jj 
+map <leader>/ :nohlsearch<CR> " stop search highlighting
 colorscheme simple-dark
 set updatetime=300 " shorter updatetime makes it seem more responsive
 set hidden
@@ -30,6 +30,16 @@ set incsearch " incremental search (as string is being typed)
 " smart case-sensitive search
 set ignorecase
 set smartcase
+"folding settings
+set foldmethod=indent   " fold based on indent
+set foldnestmax=10      " deepest fold is 10 levels
+set nofoldenable        " dont fold by default
+set foldlevel=1         " this is just what i use
+nmap <leader>a za				" folding shortcut
+nmap <leader>M zM				" fold everything
+nmap <leader>R zR				" unfold everything
+nmap <leader>m zm				" fold
+nmap <leader>r zr				" unfold
 
 
 " ------
