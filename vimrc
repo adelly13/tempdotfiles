@@ -73,6 +73,7 @@ Plug 'tpope/vim-commentary' " comment out selected lines with `gc`
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " toggle with :InstantMarkdownPreview and :InstantMarkdownStop
 call plug#end()
 
 
