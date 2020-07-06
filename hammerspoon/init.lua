@@ -36,9 +36,9 @@ hs.hotkey.bind(hyper, "'", function()
   local screen = win:screen()
   local max = screen:frame()
 	
-	f.x = max.x + (max.w / 6) 
+	f.x = max.x + (max.w / 16) 
   f.y = max.y
-  f.w = max.w * (2 / 3) 
+  f.w = max.w * (7 / 8) 
   f.h = max.h
   win:setFrame(f)
 end)
