@@ -17,7 +17,7 @@ set showmatch " show matching braces when text indicator is over them
 " --------------------
 let mapleader=',' " leader key!
 imap jj <Esc> " map <Esc> to jj 
-map <leader>/ :nohlsearch<CR> " stop search highlighting
+map <leader>h :nohlsearch<CR> " stop search highlighting
 colorscheme simple-dark
 set updatetime=300 " shorter updatetime makes it seem more responsive
 set hidden
@@ -80,6 +80,8 @@ call plug#end()
 " ------------------
 " Plugin Preferences
 " ------------------
+nmap <leader>/ gcc " use <leader>/ to comment out lines
+vmap <leader>/ gcc " same as above but in visual mode
 let g:user_emmet_leader_key='<leader>' " expand emmet with `<leader>,`
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
@@ -100,6 +102,7 @@ inoremap <silent><expr> <Tab>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 
 " status line color
 let g:lightline = {
