@@ -38,8 +38,6 @@ set foldlevel=1         " this is just what i use
 nmap <leader>a za				" folding shortcut
 nmap <leader>M zM				" fold everything
 nmap <leader>R zR				" unfold everything
-nmap <leader>m zm				" fold
-nmap <leader>r zr				" unfold
 
 
 " ------
@@ -74,7 +72,8 @@ Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " toggle with :InstantMarkdownPreview and :InstantMarkdownStop
-Plug 'evanleck/vim-svelte'
+Plug 'burner/vim-svelte'
+Plug 'leafOfTree/vim-vue-plugin'
 call plug#end()
 
 
