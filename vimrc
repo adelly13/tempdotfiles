@@ -27,10 +27,13 @@ set backspace=indent,eol,start " allow backspacing over everything
 set laststatus=2
 set noshowmode " hide default status line
 set incsearch " incremental search (as string is being typed)
-" smart case-sensitive search
-set ignorecase
+set ignorecase " smart case-sensitive search
 set smartcase
-"folding settings
+
+
+" -------
+" Folding
+" -------
 set foldmethod=indent   " fold based on indent
 set foldnestmax=10      " deepest fold is 10 levels
 set nofoldenable        " dont fold by default
@@ -50,6 +53,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" -----
+" netrw
+" -----
+
+
 
 " ------- 
 " Plugins
@@ -67,7 +75,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'mattn/emmet-vim' " emmet
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'tpope/vim-commentary' " comment out selected lines with `gc`
+Plug 'tpope/vim-commentary' 
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
@@ -80,8 +88,9 @@ call plug#end()
 " ------------------
 " Plugin Preferences
 " ------------------
-nmap <leader>/ gcc " use <leader>/ to comment out lines
-vmap <leader>/ gcc " same as above but in visual mode
+" vim-commentary
+nmap <leader>/ gcc
+vmap <leader>/ gcc 
 let g:user_emmet_leader_key='<leader>' " expand emmet with `<leader>,`
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
@@ -102,7 +111,6 @@ inoremap <silent><expr> <Tab>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 
 " status line color
 let g:lightline = {
