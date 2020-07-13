@@ -27,6 +27,9 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 
+# Python shortcuts
+alias pip='pip3'
+
 
 # Rewrite Brewfile
 alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
