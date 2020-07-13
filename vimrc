@@ -53,11 +53,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
-" -----
-" netrw
-" -----
-
-
 
 " ------- 
 " Plugins
@@ -80,8 +75,9 @@ Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " toggle with :InstantMarkdownPreview and :InstantMarkdownStop
-Plug 'burner/vim-svelte'
 Plug 'leafOfTree/vim-vue-plugin'
+Plug 'preservim/nerdtree'
+Plug 'tmsvg/pear-tree'
 call plug#end()
 
 
@@ -97,6 +93,7 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup = 1
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']} " ale linters
 let g:ale_completion_enabled = 1 " ale completion
+map <leader>n :NERDTreeToggle<CR>
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
