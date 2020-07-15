@@ -35,6 +35,10 @@ alias pip='pip3'
 alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
 
 
+# Connect rclone
+alias rcconnect='rclone mount --daemon aws:foam-notes ~/Documents/School/foam-notes && rclone mount --daemon drive: ~/Documents/School/drive'
+
+
 # Recursively remove .DS_Store files
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
