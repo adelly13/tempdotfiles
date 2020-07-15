@@ -1,6 +1,3 @@
-set nocompatible " not compatible with vi
-
-
 " -----------------
 " Syntax and indent
 " -----------------

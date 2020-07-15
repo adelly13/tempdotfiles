@@ -11,6 +11,7 @@ local applicationHotkeys = {
 	b = 'Brave Browser',
 	c = 'Visual Studio Code',
 	f = 'Finder',
+	i = 'Discord',
 	m = 'Messages',
 	n = 'Notion',
 	r = 'Reminders',
