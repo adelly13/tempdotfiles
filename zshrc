@@ -36,7 +36,7 @@ alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
 
 
 # Connect rclone
-alias rcconnect='rclone mount --daemon aws:foam-notes ~/Documents/School/foam-notes && rclone mount --daemon drive: ~/Documents/School/drive'
+alias rcconnect='rclone mount --daemon aws: ~/Documents/Foam && rclone mount --daemon drive: ~/Documents/Drive'
 
 
 # Recursively remove .DS_Store files
