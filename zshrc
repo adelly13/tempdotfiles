@@ -36,7 +36,7 @@ alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
 
 
 # Connect rclone
-alias rcconnect='rclone mount --daemon aws: ~/Documents/Foam && rclone mount --daemon drive: ~/Documents/Drive'
+alias rcconnect='rclone mount --daemon aws: ~/Documents/Cloud/AWS && rclone mount --daemon drive: ~/Documents/School/Drive && rclone mount --daemon digitalocean: ~/Documents/Cloud/DigitalOcean'
 
 
 # Recursively remove .DS_Store files
