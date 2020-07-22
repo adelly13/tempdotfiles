@@ -12,9 +12,6 @@ ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true # Fixes some permissions issues
 source $ZSH/oh-my-zsh.sh
 
-# Prompt
-# PROMPT='%n %. %% '
-
 # Terminal shortcuts
 alias bk='cd ..'
 alias clr='clear'
@@ -30,18 +27,14 @@ alias gc='git commit'
 # Python shortcuts
 alias pip='pip3'
 
-
 # Rewrite Brewfile
 alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
-
 
 # Connect rclone
 alias rcconnect='rclone mount --daemon aws: ~/Documents/Cloud/AWS && rclone mount --daemon drive: ~/Documents/Cloud/Drive' 
 
-
 # Recursively remove .DS_Store files
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
-
 
 # My IP Address
 function myip() {
@@ -52,12 +45,8 @@ function myip() {
 	ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
 
-
-# Flutter installation
-export PATH="$PATH:/Users/tanay/Documents/Programming/SDKs/flutter/bin"
-
 # Homebrew sbin
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
