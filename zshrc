@@ -27,6 +27,11 @@ alias gc='git commit'
 # Python shortcuts
 alias pip='pip3'
 
+# C++ shortcuts
+alias gpp='g++-10'
+cco() { gpp -std=c++17 -O2 -o $1 $1.cpp -Wall -Wextra -Wshadow; } # Compiles `name` (taken as an argument)
+crun() { cco $1 && ./$1 & fg; } # Compiles and executes `name` (taken as an argument)
+
 # Rewrite Brewfile
 alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
 
@@ -44,9 +49,6 @@ function myip() {
 	ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
 	ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
-
-# Homebrew sbin
-export PATH="/usr/local/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

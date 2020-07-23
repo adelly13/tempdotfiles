@@ -74,7 +74,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " toggle with :InstantMarkdownPreview and :InstantMarkdownStop
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'preservim/nerdtree'
-Plug 'tmsvg/pear-tree'
 call plug#end()
 
 

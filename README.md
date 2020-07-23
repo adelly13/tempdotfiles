@@ -17,3 +17,4 @@ Modify install.conf.yaml to change the behavior of dotbot (see [configuration](h
 
 ## Upgrading Dotbot
 In the root of this repo, run `git submodule update --remote dotbot`, then commit before running `./install`
+You can also run `p10k configure` if you want to change the configuration.
