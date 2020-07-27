@@ -8,6 +8,7 @@ hs.hotkey.bind(hyper, "0", function()
 
 -- App Shortcuts
 local applicationHotkeys = {
+	a = 'Slack',
 	b = 'Brave Browser',
 	c = 'Visual Studio Code',
 	f = 'Finder',
