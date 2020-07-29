@@ -26,6 +26,7 @@ set noshowmode " hide default status line
 set incsearch " incremental search (as string is being typed)
 set ignorecase " smart case-sensitive search
 set smartcase
+set autoindent
 
 
 " -------
@@ -65,7 +66,6 @@ endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim' " bottom status line
-Plug 'mattn/emmet-vim' " emmet
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-commentary' 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -95,7 +95,6 @@ let g:coc_global_extensions = [
 	\ 'coc-tsserver',
 	\ 'coc-json',
 	\ 'coc-vetur',
-	\ 'coc-clangd',
 	\ 'coc-jedi'
 	\ ] 
 
