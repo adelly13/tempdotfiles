@@ -14,17 +14,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Terminal shortcuts
 alias bk='cd ..'
-alias clr='clear'
 alias la='ls -a'
-alias v='vim'
 
 # Git shortcuts
-alias gi='git init'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 
 # Python shortcuts
+alias python='python3'
 alias pip='pip3'
 
 # C++ shortcuts
@@ -43,7 +41,7 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # My IP Address
 function myip() {
-    ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
+	ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
 	ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
 	ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 	ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'

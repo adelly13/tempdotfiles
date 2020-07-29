@@ -68,11 +68,9 @@ Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'mattn/emmet-vim' " emmet
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-commentary' 
-Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'terryma/vim-multiple-cursors'
+Plug 'w0rp/ale'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " toggle with :InstantMarkdownPreview and :InstantMarkdownStop
-Plug 'leafOfTree/vim-vue-plugin'
 Plug 'preservim/nerdtree'
 call plug#end()
 
@@ -83,30 +81,30 @@ call plug#end()
 " vim-commentary
 nmap <leader>/ gcc
 vmap <leader>/ gcc 
-let g:user_emmet_leader_key='<leader>' " expand emmet with `<leader>,`
+" indent guides
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup = 1
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']} " ale linters
 let g:ale_completion_enabled = 1 " ale completion
 map <leader>n :NERDTreeToggle<CR>
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-inoremap <silent><expr> <Tab>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<Tab>" :
-  \ coc#refresh()
+" coc language servers and other extensions
+let g:coc_global_extensions = [
+	\ 'coc-snippets',
+	\ 'coc-pairs',
+	\ 'coc-tsserver',
+	\ 'coc-json',
+	\ 'coc-vetur',
+	\ 'coc-clangd',
+	\ 'coc-jedi'
+	\ ] 
+
 " navigate the completion list
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" confirm completion with `<leader>,`
+inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " status line color
-let g:lightline = {
-	\ 'colorscheme': 'deus'
-  \ }
+let g:lightline = {'colorscheme': 'deus'} 
 
