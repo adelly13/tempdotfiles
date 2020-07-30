@@ -20,10 +20,8 @@ nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
 " -----------------
 set autoindent
 set hls is											" set highlighting on search
-set shiftwidth=2
 set showmatch						" show matching braces when text indicator is over them
-set softtabstop=0 noexpandtab
-set tabstop=2										" width 2 for tabs
+set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab smarttab 
 syntax on 											" enable syntax highlighting
 
 
