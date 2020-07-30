@@ -2,10 +2,10 @@
 " Basic editing config
 " --------------------
 colorscheme simple-dark
-inoremap jj <Esc>								" map <Esc> to jj 
-let mapleader=',' 							" leader key!
-noremap <leader>h :nohlsearch<CR> 	" stop search highlighting
-vnoremap <leader>s :sort<CR>		" easy sorting
+inoremap jj <Esc>	" map <Esc> to jj 
+let mapleader=','	" leader key!
+noremap <leader>h :nohlsearch<CR>	" stop search highlighting
+vnoremap <leader>s :sort<CR>	" easy sorting
 
 
 " ---------------
@@ -19,10 +19,9 @@ nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
 " Syntax and indent
 " -----------------
 set autoindent
-set hls is											" set highlighting on search
-set showmatch						" show matching braces when text indicator is over them
+set showmatch	" show matching braces when text indicator is over them
 set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab smarttab 
-syntax on 											" enable syntax highlighting
+syntax on	" enable syntax highlighting
 
 
 " -----------------------
@@ -50,21 +49,21 @@ set splitright
 " -------
 " Folding
 " -------
-nnoremap <leader>M zM						" fold everything
-nnoremap <leader>R zR						" unfold everything
-nnoremap <leader>a za						" folding shortcut
-set foldlevel=1         				" this is just what i use
-set foldmethod=indent   				" fold based on indent
-set foldnestmax=10      				" deepest fold is 10 levels
-set nofoldenable        				" dont fold by default
+nnoremap <leader>M zM	" fold everything
+nnoremap <leader>R zR	" unfold everything
+nnoremap <leader>a za	" folding shortcut
+set foldlevel=1      	" this is just what i use
+set foldmethod=indent	" fold based on indent
+set foldnestmax=10   	" deepest fold is 10 levels
+set nofoldenable     	" dont fold by default
 
 
 " ------
 " Search
 " ------
 set hlsearch
-set ignorecase									" smart case-sensitive search
-set incsearch										" incremental search (as string is being typed)
+set ignorecase	" smart case-sensitive search
+set incsearch	" incremental search (as string is being typed)
 set smartcase
 
 
@@ -74,9 +73,9 @@ set smartcase
 set backspace=indent,eol,start	" allow backspacing over everything
 set hidden
 set laststatus=2
-set noshowmode									" hide default status line
-set shortmess+=I								" disable startup message
-set updatetime=300					" shorter updatetime makes it seem more responsive
+set noshowmode	" hide default status line
+set shortmess+=I	" disable startup message
+set updatetime=300	" shorter updatetime makes it seem more responsive
 
 
 " ------- 
