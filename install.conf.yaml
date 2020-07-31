@@ -13,6 +13,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [xcode-select --install, Installing Xcode Devtools]
     - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)", Installing Homebrew]
     - [brew bundle, Installing from Brewfile]
     - [cd /usr/local/bin && ln -s gcc-10 gcc && cd, Creating gcc symlink]

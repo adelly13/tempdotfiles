@@ -15,6 +15,7 @@ local applicationHotkeys = {
 	i = 'Discord',
 	m = 'Messages',
 	n = 'Notion',
+	o = 'Obsidian',
 	r = 'Reminders',
 	s = 'Spotify',
 	t = 'Terminal'

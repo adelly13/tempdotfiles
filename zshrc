@@ -33,8 +33,8 @@ crun() { cco $1 && ./$1 & fg; } # Compiles and executes `name` (taken as an argu
 # Rewrite Brewfile
 alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
 
-# Connect rclone
-alias rcconnect='rclone mount --daemon aws: ~/Documents/Cloud/AWS && rclone mount --daemon drive: ~/Documents/Cloud/Drive' 
+# Connect rclone to Google Drive
+alias rcconnect='rclone mount --daemon drive: ~/Documents/School/Drive' 
 
 # Recursively remove .DS_Store files
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"

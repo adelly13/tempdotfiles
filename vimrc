@@ -6,6 +6,7 @@ inoremap jj <Esc>	" map <Esc> to jj
 let mapleader=','	" leader key!
 noremap <leader>h :nohlsearch<CR>	" stop search highlighting
 vnoremap <leader>s :sort<CR>	" easy sorting
+nnoremap <leader>s :w<CR> " easy sav
 
 
 " ---------------
@@ -119,7 +120,6 @@ let g:coc_global_extensions = [
 	\ 'coc-clangd',
 	\ 'coc-jedi',
 	\ 'coc-json',
-	\ 'coc-pairs',
 	\ 'coc-snippets',
 	\ 'coc-tsserver',
 	\ 'coc-vetur'
