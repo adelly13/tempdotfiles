@@ -1,3 +1,5 @@
+set nocompatible
+
 " --------------------
 " Basic editing config
 " --------------------
@@ -6,7 +8,7 @@ inoremap jj <Esc>	" map <Esc> to jj
 let mapleader=','	" leader key!
 noremap <leader>h :nohlsearch<CR>	" stop search highlighting
 vnoremap <leader>s :sort<CR>	" easy sorting
-nnoremap <leader>s :w<CR> " easy sav
+nnoremap <leader>s :w<CR> " easy save
 
 
 " ---------------
@@ -92,6 +94,7 @@ endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim' " bottom status line
+Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -118,9 +121,14 @@ noremap <leader>n :NERDTreeToggle<CR>
 " coc language servers and other extensions
 let g:coc_global_extensions = [
 	\ 'coc-clangd',
+	\ 'coc-emmet',
+	\ 'coc-html',
 	\ 'coc-jedi',
 	\ 'coc-json',
+	\ 'coc-pairs',
 	\ 'coc-snippets',
+	\ 'coc-svelte',
+	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
 	\ 'coc-vetur'
 	\ ] 
