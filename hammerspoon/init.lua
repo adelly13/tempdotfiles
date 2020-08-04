@@ -8,13 +8,11 @@ hs.hotkey.bind(hyper, "0", function()
 
 -- App Shortcuts
 local applicationHotkeys = {
-	a = 'Slack',
 	b = 'Brave Browser',
 	c = 'Visual Studio Code',
+	d = 'Discord',
 	f = 'Finder',
-	i = 'Discord',
 	m = 'Messages',
-	n = 'Notion',
 	o = 'Obsidian',
 	r = 'Reminders',
 	s = 'Spotify',
@@ -42,6 +40,60 @@ hs.hotkey.bind(hyper, "'", function()
 	f.x = max.x + (max.w / 16) 
   f.y = max.y
   f.w = max.w * (7 / 8) 
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+hs.hotkey.bind(hyper, "Left", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+hs.hotkey.bind(hyper, "Right", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + (max.w / 2)
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+
+hs.hotkey.bind(hyper, "Up", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y + (max.y / 2)
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+
+hs.hotkey.bind(hyper, "Down", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y / 2
+  f.w = max.w
   f.h = max.h
   win:setFrame(f)
 end)

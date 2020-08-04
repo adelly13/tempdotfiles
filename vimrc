@@ -23,7 +23,7 @@ nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
 " -----------------
 set autoindent
 set showmatch	" show matching braces when text indicator is over them
-set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab smarttab 
+set tabstop=2 shiftwidth=2 softtabstop=0 expandtab smarttab 
 syntax on	" enable syntax highlighting
 
 
@@ -137,4 +137,5 @@ inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " navigate the completion list
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
+" instant markdown
+let g:instant_markdown_autostart = 0
