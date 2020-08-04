@@ -10,8 +10,8 @@ hs.hotkey.bind(hyper, "0", function()
 local applicationHotkeys = {
 	b = 'Brave Browser',
 	c = 'Visual Studio Code',
-	d = 'Discord',
 	f = 'Finder',
+	i = 'Discord',
 	m = 'Messages',
 	o = 'Obsidian',
 	r = 'Reminders',

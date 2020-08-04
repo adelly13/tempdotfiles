@@ -94,12 +94,15 @@ endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim' " bottom status line
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
+Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 call plug#end()
 
@@ -139,3 +142,13 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " instant markdown
 let g:instant_markdown_autostart = 0
+" vimwiki
+let g:vimwiki_list = [{
+  \ 'path': '~/Documents/Vimwiki/',
+  \ 'syntax': 'markdown',
+  \ 'ext': '.md',
+  \ 'custom_wiki2html': 'vimwiki_markdown',
+  \ 'path_html': '~/Documents/Vimwiki/_site',
+  \ 'auto_export': 1,
+  \  }]
+nnoremap <leader>bl :VimwikiBacklinks<CR> " show backlinks
