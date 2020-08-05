@@ -1,14 +1,25 @@
-set nocompatible
-
 " --------------------
 " Basic editing config
 " --------------------
 colorscheme simple-dark
 inoremap jj <Esc>	" map <Esc> to jj 
 let mapleader=','	" leader key!
-noremap <leader>h :nohlsearch<CR>	" stop search highlighting
-vnoremap <leader>s :sort<CR>	" easy sorting
 nnoremap <leader>s :w<CR> " easy save
+nnoremap <leader>sop :source %<CR> " source current file
+noremap <leader>h :nohlsearch<CR>	" stop search highlighting
+set nocompatible
+vnoremap <leader>s :sort<CR>	" easy sorting
+
+
+" -----
+" Netrw 
+" -----
+let g:netrw_banner = 0
+let g:netrw_list_hide = 1 " must come vefore the regex
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+' " auto hide dotfiles
+let g:netrw_liststyle = 3 " view as tree
+let g:netrw_winsize = 25
+noremap <leader>n :Lex<CR> " netrw file browser
 
 
 " ---------------
@@ -23,7 +34,7 @@ nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
 " -----------------
 set autoindent
 set showmatch	" show matching braces when text indicator is over them
-set tabstop=2 shiftwidth=2 softtabstop=0 expandtab smarttab 
+set tabstop=2 shiftwidth=2 softtabstop=0 expandtab smarttab
 syntax on	" enable syntax highlighting
 
 
@@ -34,7 +45,8 @@ highlight ColorColumn ctermbg=234
 set colorcolumn=80
 set fo-=t
 set nowrap
-set number
+set number relativenumber
+set nu rnu " hybrid line numbers
 set tw=79
 
 
@@ -99,7 +111,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
 Plug 'vimwiki/vimwiki'
@@ -120,7 +131,6 @@ let g:ale_completion_enabled = 1 " ale completion
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
-noremap <leader>n :NERDTreeToggle<CR>
 " coc language servers and other extensions
 let g:coc_global_extensions = [
 	\ 'coc-clangd',
@@ -152,3 +162,5 @@ let g:vimwiki_list = [{
   \ 'auto_export': 1,
   \  }]
 nnoremap <leader>bl :VimwikiBacklinks<CR> " show backlinks
+" fzf
+nnoremap <leader>ff :Files<CR> " find in directory
