@@ -1,0 +1,11 @@
+- clean: ['~']
+
+- link:
+    ~/.gitconfig:
+    ~/.zshrc:
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [chsh -s $(which zsh) && zsh, Making zsh the default shell]
+  - [git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh, Installing Oh My Zsh]
+  - [git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k, Installing powerlevel10k] 

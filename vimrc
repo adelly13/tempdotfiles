@@ -11,17 +11,6 @@ set nocompatible
 vnoremap <leader>s :sort<CR>	" easy sorting
 
 
-" -----
-" Netrw 
-" -----
-let g:netrw_banner = 0
-let g:netrw_list_hide = 1 " must come vefore the regex
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+' " auto hide dotfiles
-let g:netrw_liststyle = 3 " view as tree
-let g:netrw_winsize = 25
-noremap <leader>n :Lex<CR> " netrw file browser
-
-
 " ---------------
 " Custom snippets
 " ---------------
@@ -105,6 +94,7 @@ ddfiletype indent on " indents for HTML
 endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -131,6 +121,7 @@ let g:ale_completion_enabled = 1 " ale completion
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
+noremap <leader>n :NERDTreeToggle<CR>
 " coc language servers and other extensions
 let g:coc_global_extensions = [
 	\ 'coc-clangd',
