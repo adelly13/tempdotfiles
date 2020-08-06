@@ -2,14 +2,10 @@
     ~/.ssh/config:
       path: ssh/config
       create: true
-    ~/.vim:
-    ~/.vimrc:
-    ~/.tmux.conf:
     ~/.hammerspoon:
 
 - shell:
   - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)", Installing Homebrew]
   - [brew bundle, Installing from Brewfile]
   - [pyenv install 3.8.5, Installing Python 3.8.5]
-  - [pip3 install vimwiki_markdown, Installing vimwiki html generator for markdown]
   - [cd /usr/local/bin && ln -s gcc-10 gcc && cd, Creating gcc symlink]

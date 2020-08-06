@@ -12,6 +12,9 @@ ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true # Fixes some permissions issues
 source $ZSH/oh-my-zsh.sh
 
+# Editor
+export EDITOR="vim"
+
 # Terminal shortcuts
 alias bk='cd ..'
 alias la='ls -a'
@@ -47,3 +50,5 @@ function myip() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [ -e /Users/tanay/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tanay/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+

@@ -3,6 +3,9 @@
 - link:
     ~/.gitconfig:
     ~/.zshrc:
+    ~/.vim:
+    ~/.vimrc:
+    ~/.tmux.conf:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

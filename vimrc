@@ -5,17 +5,10 @@ colorscheme simple-dark
 inoremap jj <Esc>	" map <Esc> to jj 
 let mapleader=','	" leader key!
 nnoremap <leader>s :w<CR> " easy save
-nnoremap <leader>sop :source %<CR> " source current file
 noremap <leader>h :nohlsearch<CR>	" stop search highlighting
 set nocompatible
 vnoremap <leader>s :sort<CR>	" easy sorting
-
-
-" ---------------
-" Custom snippets
-" ---------------
-" usaco template
-nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
+nnoremap <BS> <C-^> " go to previous file
 
 
 " -----------------
@@ -94,16 +87,16 @@ ddfiletype indent on " indents for HTML
 endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
+Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
-Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 call plug#end()
 
@@ -129,7 +122,6 @@ let g:coc_global_extensions = [
 	\ 'coc-html',
 	\ 'coc-jedi',
 	\ 'coc-json',
-	\ 'coc-pairs',
 	\ 'coc-snippets',
 	\ 'coc-svelte',
 	\ 'coc-tailwindcss',
@@ -143,15 +135,13 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " instant markdown
 let g:instant_markdown_autostart = 0
-" vimwiki
-let g:vimwiki_list = [{
-  \ 'path': '~/Documents/Vimwiki/',
-  \ 'syntax': 'markdown',
-  \ 'ext': '.md',
-  \ 'custom_wiki2html': 'vimwiki_markdown',
-  \ 'path_html': '~/Documents/Vimwiki/_site',
-  \ 'auto_export': 1,
-  \  }]
-nnoremap <leader>bl :VimwikiBacklinks<CR> " show backlinks
 " fzf
 nnoremap <leader>ff :Files<CR> " find in directory
+" neuron
+nnoremap <leader>zw :e ~/zettelkasten/index.md<CR> 
+nmap <leader>zn gzn
+nmap <leader>zu gzu
+nmap <leader>zl gzl
+nmap <leader>zz gzz
+nmap <leader>zi gzi
+nmap <leader>zo gzo
