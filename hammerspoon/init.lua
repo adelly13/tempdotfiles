@@ -13,6 +13,7 @@ local applicationHotkeys = {
 	f = 'Finder',
 	i = 'Discord',
 	m = 'Messages',
+  n = 'Notes',
 	o = 'Obsidian',
 	r = 'Reminders',
 	s = 'Spotify',

@@ -3,7 +3,10 @@
 My personal configuration files
 
 ## Installation
-In the root of this repo, run `./install` to set up the dotfiles and run the install scripts
+In the root of this repo, run `./install-profile` to set up the dotfiles and run the install scripts for a particular profile,
+or `./install-standalone` to install particular configurations. See
+[this](https://github.com/anishathalye/dotbot/wiki/Tips-and-Tricks) page in the
+wiki for Dotbot to learn more.
 
 To install the vim plugins, first open vim, then run `:PlugInstall`. To clean unused plugs, run `:PlugClean`
 
