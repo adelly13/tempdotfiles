@@ -9,3 +9,4 @@
   - [brew bundle, Installing from Brewfile]
   - [pyenv install 3.8.5, Installing Python 3.8.5]
   - [cd /usr/local/bin && ln -s gcc-10 gcc && cd, Creating gcc symlink]
+  - [touch ~/.hushlogin, Hushing login in terminal]

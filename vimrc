@@ -105,7 +105,7 @@ call plug#end()
 " Plugin Preferences
 " ------------------
 " status line color
-let g:lightline = {'colorscheme': 'wombat'} 
+let g:lightline = {'colorscheme': 'deus'} 
 " vim-commentary
 nnoremap <leader>/ gcc
 vnoremap <leader>/ gcc 
