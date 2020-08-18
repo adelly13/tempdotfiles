@@ -97,7 +97,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
-Plug 'w0rp/ale'
+Plug 'tpope/vim-surround' 
 call plug#end()
 
 
@@ -106,11 +106,7 @@ call plug#end()
 " ------------------
 " status line color
 let g:lightline = {'colorscheme': 'deus'} 
-" vim-commentary
-nnoremap <leader>/ gcc
-vnoremap <leader>/ gcc 
 " indent guides
-let g:ale_completion_enabled = 1 " ale completion
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
@@ -133,10 +129,7 @@ inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " navigate the completion list
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" instant markdown
 let g:instant_markdown_autostart = 0
-" fzf
-nnoremap <leader>ff :Files<CR> " find in directory
 " neuron
 nnoremap <leader>zw :e ~/zettelkasten/index.md<CR> 
 nmap <leader>zn gzn
