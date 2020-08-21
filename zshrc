@@ -39,6 +39,9 @@ alias holdmybeer='cd ~/.dotfiles && rm Brewfile && brew bundle dump && cd'
 # Recursively remove .DS_Store files
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
+# Easy cd
+alias drv='cd ~/Documents/School/Drive/My\ Drive'
+
 # My IP Address
 function myip() {
 	ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
