@@ -64,6 +64,12 @@ set incsearch	" incremental search (as string is being typed)
 set smartcase
 
 
+" ---------
+" Languages
+" --------
+nnoremap <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+
+
 " --------------------
 " Miscellaneous config
 " --------------------
