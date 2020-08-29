@@ -68,6 +68,7 @@ set smartcase
 " Languages
 " --------
 nnoremap <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+nnoremap <leader>apcs :-1read ~/.vim/snippets/apcs.java<CR>8jo
 
 
 " --------------------
@@ -122,6 +123,7 @@ let g:coc_global_extensions = [
 	\ 'coc-clangd',
 	\ 'coc-emmet',
 	\ 'coc-html',
+  \ 'coc-java',
 	\ 'coc-jedi',
 	\ 'coc-json',
 	\ 'coc-snippets',

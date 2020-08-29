@@ -14,6 +14,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Editor
 export EDITOR="vim"
+alias v='vim'
 
 # Terminal shortcuts
 alias bk='cd ..'
