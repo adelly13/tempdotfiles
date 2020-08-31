@@ -18,7 +18,8 @@ local applicationHotkeys = {
 	o = 'Obsidian',
 	r = 'Reminders',
 	s = 'Spotify',
-	t = 'Terminal'
+	t = 'Terminal',
+  z = 'zoom.us'
 }
 
 for key, app in pairs(applicationHotkeys) do
