@@ -13,6 +13,7 @@ local applicationHotkeys = {
 	c = 'Visual Studio Code',
 	f = 'Finder',
 	i = 'Discord',
+  k = 'Kindle',
 	m = 'Messages',
   n = 'Notes',
 	o = 'Obsidian',
