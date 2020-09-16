@@ -9,6 +9,7 @@ noremap <leader>h :nohlsearch<CR>	" stop search highlighting
 set nocompatible
 vnoremap <leader>s :sort<CR>	" easy sorting
 nnoremap <BS> <C-^> " go to previous file
+set clipboard=unnamed " use system clipboard
 
 
 " -----------------
