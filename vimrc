@@ -9,7 +9,6 @@ noremap <leader>h :nohlsearch<CR>	" stop search highlighting
 set nocompatible
 vnoremap <leader>s :sort<CR>	" easy sorting
 nnoremap <BS> <C-^> " go to previous file
-set clipboard=unnamed " use system clipboard for yank
 
 
 " -----------------
@@ -70,6 +69,8 @@ set smartcase
 " --------
 nnoremap <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
 nnoremap <leader>apcs :-1read ~/.vim/snippets/apcs.java<CR>8jo
+nnoremap <leader>tex :-1read ~/.vim/snippets/tex.tex<CR>2jf{ci{
+autocmd Filetype tex setl updatetime=1
 
 
 " --------------------
@@ -99,13 +100,12 @@ Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
-Plug 'tpope/vim-surround' 
+Plug 'xuhdev/vim-latex-live-preview'
 call plug#end()
 
 
@@ -118,7 +118,8 @@ let g:lightline = {'colorscheme': 'deus'}
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
-noremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+let g:livepreview_previewer = 'open -a Preview'
 " coc language servers and other extensions
 let g:coc_global_extensions = [
 	\ 'coc-clangd',
