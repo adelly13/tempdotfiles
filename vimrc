@@ -134,7 +134,7 @@ let g:coc_global_extensions = [
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
 	\ 'coc-vetur'
-	\ ] 
+	\ ]
 " confirm completion with `<leader>,`
 inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " navigate the completion list

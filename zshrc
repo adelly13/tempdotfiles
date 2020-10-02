@@ -42,6 +42,7 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Easy cd
 alias drv='cd ~/Documents/School/Drive/My\ Drive'
+alias apcs='drv && cd APCS'
 
 # My IP Address
 function myip() {
