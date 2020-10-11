@@ -106,6 +106,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
+Plug 'tpope/vim-surround'
 Plug 'xuhdev/vim-latex-live-preview'
 call plug#end()
 
@@ -129,6 +130,7 @@ let g:coc_global_extensions = [
   \ 'coc-java',
 	\ 'coc-jedi',
 	\ 'coc-json',
+  \ 'coc-pairs',
 	\ 'coc-snippets',
 	\ 'coc-svelte',
 	\ 'coc-tailwindcss',
