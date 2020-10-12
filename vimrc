@@ -74,6 +74,18 @@ nnoremap <leader>tex :-1read ~/.vim/snippets/tex.tex<CR>2jf{ci{
 autocmd Filetype tex setl updatetime=1
 
 
+" -----
+" Pairs
+" -----
+inoremap <leader>" ""<left>
+inoremap <leader>' ''<left>
+inoremap <leader>( ()<left>
+inoremap <leader>[ []<left>
+inoremap <leader>{ {}<left>
+inoremap {<CR> {<CR>}<ESC>O<Tab>
+inoremap {;<CR> {<CR>};<ESC>O
+
+
 " --------------------
 " Miscellaneous config
 " --------------------
@@ -130,7 +142,6 @@ let g:coc_global_extensions = [
   \ 'coc-java',
 	\ 'coc-jedi',
 	\ 'coc-json',
-  \ 'coc-pairs',
 	\ 'coc-snippets',
 	\ 'coc-svelte',
 	\ 'coc-tailwindcss',
