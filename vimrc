@@ -68,6 +68,7 @@ set smartcase
 " ---------
 " Languages
 " --------
+nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
 nnoremap <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
 nnoremap <leader>apcs :-1read ~/.vim/snippets/apcs.java<CR>8jo
 nnoremap <leader>tex :-1read ~/.vim/snippets/tex.tex<CR>2jf{ci{
