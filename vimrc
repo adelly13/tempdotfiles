@@ -110,6 +110,7 @@ ddfiletype indent on " indents for HTML
 endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
