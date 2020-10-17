@@ -1,7 +1,6 @@
 " --------------------
 " Basic editing config
 " --------------------
-colorscheme simple-dark
 inoremap jj <Esc>	" map <Esc> to jj 
 let mapleader=','	" leader key!
 nnoremap <leader>s :w<CR> " easy save
@@ -115,6 +114,7 @@ Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -128,6 +128,8 @@ call plug#end()
 " ------------------
 " Plugin Preferences
 " ------------------
+set background=dark
+colorscheme gruvbox
 " status line color
 let g:lightline = {'colorscheme': 'deus'} 
 " indent guides
