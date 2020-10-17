@@ -114,7 +114,7 @@ Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -129,9 +129,9 @@ call plug#end()
 " Plugin Preferences
 " ------------------
 set background=dark
-colorscheme gruvbox
+colorscheme onehalfdark
 " status line color
-let g:lightline = {'colorscheme': 'deus'} 
+let g:lightline = {'colorscheme': 'onehalfdark'} 
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
