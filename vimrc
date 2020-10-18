@@ -6,11 +6,11 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 inoremap jj <Esc>
 let mapleader=','	" leader key!
-nnoremap <leader>s :w<CR> " easy save
-noremap <leader>h :nohlsearch<CR>	" stop search highlighting
+nnoremap <silent> <leader>s :w<CR> " easy save
+noremap <silent> <leader>h :nohlsearch<CR>	" stop search highlighting
 set nocompatible
-vnoremap <leader>s :sort<CR>	" easy sorting
-nnoremap <BS> <C-^> " go to previous file
+vnoremap <silent> <leader>s :sort<CR>	" easy sorting
+nnoremap <silent> <BS> <C-^> " go to previous file
 set clipboard=unnamed " use system clipboard
 
 
@@ -67,9 +67,9 @@ set smartcase
 " ---------
 " Languages
 " --------
-nnoremap <leader>apcs :-1read ~/.vim/snippets/apcs.java<CR>8jo
-nnoremap <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
-nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
+nnoremap <silent> <leader>apcs :-1read ~/.vim/snippets/apcs.java<CR>8jo
+nnoremap <silent> <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+nnoremap <silent> <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
 
 
 " -----
@@ -106,12 +106,12 @@ ddfiletype indent on " indents for HTML
 endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
+Plug 'ianks/vim-tsx'
 Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -134,7 +134,8 @@ let g:lightline = {'colorscheme': 'onehalfdark'}
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['node_modules']
 let g:livepreview_previewer = 'open -a Preview'
 " coc language servers and other extensions
 let g:coc_global_extensions = [
@@ -155,8 +156,10 @@ inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 let g:instant_markdown_autostart = 0
+" fzf
+nnoremap <silent> <C-f> :Files<CR>
 " neuron
-nnoremap <leader>zw :e ~/zettelkasten/index.md<CR> 
+nmap <leader>zw :e ~/zettelkasten/index.md<CR> 
 nmap <leader>zn gzn
 nmap <leader>zu gzu
 nmap <leader>zl gzl
