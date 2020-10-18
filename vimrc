@@ -1,7 +1,10 @@
 " --------------------
 " Basic editing config
 " --------------------
-inoremap jj <Esc>	" map <Esc> to jj 
+"  esc mappings for exiting insert mode
+inoremap jk <Esc>
+inoremap kj <Esc>
+inoremap jj <Esc>
 let mapleader=','	" leader key!
 nnoremap <leader>s :w<CR> " easy save
 noremap <leader>h :nohlsearch<CR>	" stop search highlighting
@@ -21,7 +24,7 @@ syntax on	" enable syntax highlighting
 
 
 " -----------------------
-" Line numbers and length
+" Line Numbers and Length
 " -----------------------
 highlight ColorColumn ctermbg=234
 set colorcolumn=80
@@ -46,9 +49,6 @@ set splitright
 " -------
 " Folding
 " -------
-nnoremap <leader>M zM	" fold everything
-nnoremap <leader>R zR	" unfold everything
-nnoremap <leader>a za	" folding shortcut
 set foldlevel=1      	" this is just what i use
 set foldmethod=indent	" fold based on indent
 set foldnestmax=10   	" deepest fold is 10 levels
@@ -67,11 +67,9 @@ set smartcase
 " ---------
 " Languages
 " --------
-nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
-nnoremap <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
 nnoremap <leader>apcs :-1read ~/.vim/snippets/apcs.java<CR>8jo
-nnoremap <leader>tex :-1read ~/.vim/snippets/tex.tex<CR>2jf{ci{
-autocmd Filetype tex setl updatetime=1
+nnoremap <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+nnoremap <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
 
 
 " -----
@@ -82,19 +80,18 @@ inoremap <leader>' ''<left>
 inoremap <leader>( ()<left>
 inoremap <leader>[ []<left>
 inoremap <leader>{ {}<left>
-inoremap {<CR> {<CR>}<ESC>O<Tab>
+inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 
 " --------------------
 " Miscellaneous config
 " --------------------
-set backspace=indent,eol,start	" allow backspacing over everything
 set hidden
 set laststatus=2
 set noshowmode	" hide default status line
 set shortmess+=I	" disable startup message
-set updatetime=300	" shorter updatetime makes it seem more responsive
+set updatetime=300 " shorter update time makes it seem faster
 
 
 " ------- 
@@ -109,27 +106,28 @@ ddfiletype indent on " indents for HTML
 endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
 Plug 'tpope/vim-surround'
-Plug 'xuhdev/vim-latex-live-preview'
 call plug#end()
 
 
 " ------------------
 " Plugin Preferences
 " ------------------
-set background=dark
 colorscheme onehalfdark
+" autocompletion menu background
+highlight Pmenu ctermbg=239 ctermfg=251
 " status line color
 let g:lightline = {'colorscheme': 'onehalfdark'} 
 " indent guides
@@ -146,8 +144,7 @@ let g:coc_global_extensions = [
   \ 'coc-java',
 	\ 'coc-jedi',
 	\ 'coc-json',
-	\ 'coc-snippets',
-	\ 'coc-svelte',
+  \ 'coc-svelte',
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
 	\ 'coc-vetur'
