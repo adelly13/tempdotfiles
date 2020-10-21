@@ -115,7 +115,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
 Plug 'tpope/vim-surround'
@@ -125,11 +125,9 @@ call plug#end()
 " ------------------
 " Plugin Preferences
 " ------------------
-colorscheme onehalfdark
-" autocompletion menu background
-highlight Pmenu ctermbg=239 ctermfg=251
+colorscheme nord
 " status line color
-let g:lightline = {'colorscheme': 'onehalfdark'} 
+let g:lightline = {'colorscheme': 'nord'} 
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
