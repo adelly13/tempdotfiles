@@ -112,7 +112,7 @@ Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides', {'for': 'typescript'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'arcticicestudio/nord-vim'
@@ -132,7 +132,7 @@ let g:lightline = {'colorscheme': 'nord'}
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
-nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>:set nu rnu<CR>
 let NERDTreeIgnore = ['node_modules']
 let g:livepreview_previewer = 'open -a Preview'
 " coc language servers and other extensions
@@ -155,7 +155,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 let g:instant_markdown_autostart = 0
 " fzf
-nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <leader>f :GFiles<CR>
+nnoremap <silent> <leader>r :Rg<CR>
 " neuron
 nmap <leader>zw :e ~/zettelkasten/index.md<CR> 
 nmap <leader>zn gzn
