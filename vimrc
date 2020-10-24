@@ -12,6 +12,7 @@ set nocompatible
 vnoremap <silent> <leader>s :sort<CR>	" easy sorting
 nnoremap <silent> <BS> <C-^> " go to previous file
 set clipboard=unnamed " use system clipboard
+filetype on
 
 
 " -----------------
@@ -67,9 +68,11 @@ set smartcase
 " ---------
 " Languages
 " --------
-nnoremap <silent> <leader>apcs :-1read ~/.vim/snippets/apcs.java<CR>8jo
-nnoremap <silent> <leader>jc :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
-nnoremap <silent> <leader>usaco :-1read ~/.vim/snippets/usaco.cpp<CR>13j
+autocmd bufnewfile *.java :-1read ~/.vim/snippets/apcs.java
+autocmd bufnewfile *.cpp :-1read ~/.vim/snippets/usaco.cpp
+autocmd FileType java nnoremap <silent> <C-e> :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+autocmd FileType python nnoremap <silent> <C-e> :cd %:p:h <CR> :! python3 %:t<CR>
+autocmd FileType markdown set spell
 
 
 " -----
@@ -111,8 +114,8 @@ Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'nathanaelkane/vim-indent-guides', {'for': 'typescript'}
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'arcticicestudio/nord-vim'
