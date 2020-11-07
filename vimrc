@@ -121,7 +121,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'arcticicestudio/nord-vim'
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-commentary' 
 Plug 'tpope/vim-surround'
 call plug#end()

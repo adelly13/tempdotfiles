@@ -57,3 +57,4 @@ function myip() {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 if [ -e /Users/tanay/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tanay/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+export PATH="/usr/local/sbin:$PATH"
