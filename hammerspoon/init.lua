@@ -3,23 +3,22 @@ local hyper = { "cmd", "alt" }
 
 -- Reload
 hs.hotkey.bind(hyper, "0", function()
-	 hs.reload()
- end)
+  hs.reload()
+end)
 
 -- App Shortcuts
 local applicationHotkeys = {
-  a = 'anki',
 	b = 'Brave Browser',
-	c = 'Visual Studio Code',
+	d = 'Discord',
 	f = 'Finder',
-	i = 'Discord',
-  k = 'Kindle',
-	m = 'Messages',
-  n = 'Notes',
-	o = 'Obsidian',
+	i = 'Messages',
 	r = 'Reminders',
 	s = 'Spotify',
 	t = 'Terminal',
+	v = 'Visual Studio Code',
+  k = 'Kindle',
+  m = 'Messenger',
+  n = 'Notes',
   z = 'zoom.us'
 }
 
