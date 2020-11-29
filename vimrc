@@ -22,6 +22,8 @@ set autoindent
 set showmatch	" show matching braces when text indicator is over them
 set tabstop=2 shiftwidth=2 softtabstop=0 expandtab smarttab
 syntax on	" enable syntax highlighting
+" reformat file
+nnoremap <leader>F ggdG[p
 
 
 " -----------------------
@@ -143,6 +145,7 @@ let g:livepreview_previewer = 'open -a Preview'
 let g:coc_global_extensions = [
 	\ 'coc-clangd',
 	\ 'coc-emmet',
+  \ 'coc-go',
 	\ 'coc-html',
   \ 'coc-java',
 	\ 'coc-jedi',

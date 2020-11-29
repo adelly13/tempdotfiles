@@ -25,10 +25,6 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 
-# Python shortcuts
-alias python='python3'
-alias pip='pip3'
-
 # C++ shortcuts
 alias gpp='g++-10'
 cco() { gpp -std=c++17 -O2 -o $1 $1.cpp -Wall -Wextra -Wshadow; } # Compiles `name` (taken as an argument)
@@ -43,18 +39,28 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 # Easy cd
 alias drv='cd ~/Documents/School/Drive/My\ Drive'
 alias apcs='drv && cd APCS'
-
-# My IP Address
-function myip() {
-	ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
-	ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-	ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-	ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-	ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-}
+alias usaco='cd ~/Documents/Programming/USACO'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 if [ -e /Users/tanay/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tanay/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-export PATH="/usr/local/sbin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/tanay/.pyenv/versions/miniconda3-latest/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/tanay/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh" ]; then
+        . "/Users/tanay/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/tanay/.pyenv/versions/miniconda3-latest/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
