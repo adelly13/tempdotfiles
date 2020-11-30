@@ -39,15 +39,15 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 # Easy cd
 alias drv='cd ~/Documents/School/Drive/My\ Drive'
 alias apcs='drv && cd APCS'
-alias usaco='cd ~/Documents/Programming/USACO'
+alias zk='cd ~/zettelkasten'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-if [ -e /Users/tanay/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tanay/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
+# Pyenv config
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

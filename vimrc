@@ -75,6 +75,7 @@ autocmd bufnewfile *.cpp :-1read ~/.vim/snippets/usaco.cpp
 autocmd FileType java nnoremap <silent> <C-e> :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
 autocmd FileType python nnoremap <silent> <C-e> :cd %:p:h <CR> :! python3 %:t<CR>
 autocmd FileType cpp nnoremap <silent> <C-e> :cd %:p:h <CR> :! crun %:t:r<CR> :! cat %:t:r.out<CR>
+autocmd FileType go nnoremap <silent> <C-e> :cd %:p:h <CR> :! go run %:t<CR>
 autocmd FileType markdown set spell
 
 
@@ -113,12 +114,10 @@ ddfiletype indent on " indents for HTML
 endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
-Plug 'ianks/vim-tsx'
-Plug 'ihsanturk/neuron.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -157,18 +156,8 @@ let g:coc_global_extensions = [
 	\ ]
 " confirm completion with `<leader>,`
 inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" navigate the completion list
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-let g:instant_markdown_autostart = 0
 " fzf
 nnoremap <silent> <leader>f :GFiles<CR>
 nnoremap <silent> <leader>r :Rg<CR>
-" neuron
-nmap <leader>zw :e ~/zettelkasten/index.md<CR> 
-nmap <leader>zn gzn
-nmap <leader>zu gzu
-nmap <leader>zl gzl
-nmap <leader>zz gzz
-nmap <leader>zi gzi
-nmap <leader>zo gzo

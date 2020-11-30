@@ -1,5 +1,0 @@
-- shell:
-  - [curl -L https://raw.githubusercontent.com/NixOS/nix/d42ae78de9f92d60d0cd3db97216274946e8ba8e/scripts/create-darwin-volume.sh | sh, Installing Nix]
-  - [sudo mdutil -i off /nix, Disabling spotlight indexing for /nix]
-  - [nix-env -iA cachix -f https://cachix.org/api/v1/install && cachix use srid, Enabling Nix cache]
-  - [nix-env -if https://github.com/srid/neuron/archive/master.tar.gz, Installing Neuron Zettelkasten]
