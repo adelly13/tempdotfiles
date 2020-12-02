@@ -114,14 +114,13 @@ ddfiletype indent on " indents for HTML
 endif
 " add vim-plug plugins
 call plug#begin('~/.vim/plugged')
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
-Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-commentary' 
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -139,12 +138,10 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>:set nu rnu<CR>
 let NERDTreeIgnore = ['node_modules']
-let g:livepreview_previewer = 'open -a Preview'
 " coc language servers and other extensions
 let g:coc_global_extensions = [
 	\ 'coc-clangd',
 	\ 'coc-emmet',
-  \ 'coc-go',
 	\ 'coc-html',
   \ 'coc-java',
 	\ 'coc-jedi',
@@ -152,7 +149,7 @@ let g:coc_global_extensions = [
   \ 'coc-svelte',
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
-	\ 'coc-vetur'
+	\ 'coc-vetur',
 	\ ]
 " confirm completion with `<leader>,`
 inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -161,3 +158,33 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " fzf
 nnoremap <silent> <leader>f :GFiles<CR>
 nnoremap <silent> <leader>r :Rg<CR>
+" zettelkasten
+let g:neuron_dir = '~/zettelkasten/' " define, requires trailing slash
+function EditZettelUnderCursor()
+  execute 'e '.g:neuron_dir.expand('<cfile>').'.md'
+endfunction
+function EditNewZettel()
+  let l:id = system("od -An -N 4 -t 'x4' /dev/random")
+  execute 'e '.trim(l:id).'.md'
+	let l:body = [
+	  \ '---',
+	  \ 'date: '.strftime("%Y-%m-%dT%H:%M"),
+	  \ '---',
+	  \ '',
+	  \ '# '
+    \ ]
+	call append(0, l:body)
+  normal! dd$aPLACEHOLDER
+endfunction
+function! SearchZettels(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'dir': g:neuron_dir}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang SearchZettels call SearchZettels(<q-args>, <bang>0)
+nnoremap <silent> <leader>zz :SearchZettels # <CR>
+nnoremap <silent> <leader>zn :call EditNewZettel()<CR>
+nnoremap <silent> <leader>zo :call EditZettelUnderCursor()<CR>
