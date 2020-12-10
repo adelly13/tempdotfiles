@@ -21,7 +21,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary' 
@@ -35,11 +35,6 @@ call plug#end()
 colorscheme nord
 let g:lightline = {'colorscheme': 'nord'} " status line color
 
-" indent guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size=1
-let g:indent_guides_start_level=2
-
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>:set nu rnu<CR>
 let NERDTreeIgnore = ['node_modules']
 
@@ -51,6 +46,7 @@ let g:coc_global_extensions = [
   \ 'coc-java',
 	\ 'coc-jedi',
 	\ 'coc-json',
+  \ 'coc-pairs',
   \ 'coc-svelte',
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',

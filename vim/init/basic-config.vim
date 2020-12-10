@@ -9,6 +9,7 @@ filetype on
 inoremap jk <Esc> " mappings for exiting insert mode
 inoremap kj <Esc>
 let mapleader=','	" leader key!
+set backspace=indent,eol,start
 nnoremap <silent> <BS> <C-^> " go to previous file
 nnoremap <silent> <leader>s :w<CR> " easy save
 noremap <silent> <leader>h :nohlsearch<CR>	" stop search highlighting

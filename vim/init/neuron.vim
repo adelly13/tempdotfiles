@@ -13,7 +13,7 @@ endfunction
 
 function EditNewZettel()
   let l:id = system("od -An -N 4 -t 'x4' /dev/random")
-  execute 'e '.trim(l:id).'.md'
+  execute 'e '.g:neuron_dir.trim(l:id).'.md'
 	let l:body = [
 	  \ '---',
 	  \ 'date: '.strftime("%Y-%m-%dT%H:%M"),
@@ -48,4 +48,5 @@ nnoremap <silent> <leader>zz :SearchZettels # <CR>
 nnoremap <silent> <leader>zn :call EditNewZettel()<CR>
 nnoremap <silent> <leader>zo :call EditZettelUnderCursor()<CR>
 nnoremap <silent> <leader>zi :call InsertFileLast()<CR>
+nnoremap <silent> <leader>zw :execute 'e '.g:neuron_dir.'index.md'<CR>
 
