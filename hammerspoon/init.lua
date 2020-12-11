@@ -16,7 +16,6 @@ local applicationHotkeys = {
 	s = 'Spotify',
 	t = 'Terminal',
 	v = 'Visual Studio Code',
-  k = 'Kindle',
   m = 'Messenger',
   n = 'Notes',
   z = 'zoom.us'

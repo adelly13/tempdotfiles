@@ -3,6 +3,7 @@
       path: ssh/config
       create: true
     ~/.hammerspoon:
+    ~/.yabairc:
 
 - shell:
   - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)", Installing Homebrew]

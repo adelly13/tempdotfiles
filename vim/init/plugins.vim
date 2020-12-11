@@ -17,13 +17,15 @@ endif
 " Add vim-plug plugins
 " --------------------
 call plug#begin('~/.vim/plugged')
+Plug 'Yggdroot/indentLine'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/indentLine'
+Plug 'lervag/vimtex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
+Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary' 
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -46,19 +48,28 @@ let g:coc_global_extensions = [
   \ 'coc-java',
 	\ 'coc-jedi',
 	\ 'coc-json',
-  \ 'coc-pairs',
   \ 'coc-svelte',
+  \ 'coc-snippets',
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
 	\ 'coc-vetur',
 	\ ]
 
-" confirm completion with `<leader>,`
-inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
 " fuzzy finding
 nnoremap <silent> <leader>f :GFiles<CR>
 nnoremap <silent> <leader>r :Rg<CR>
 
+" latex
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+
+" snippets
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsExpandTrigger = '<leader>,'
+let g:UltiSnipsJumpForwardTrigger = '<C-n>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
+
+" confirm completion with `<leader>,`
+inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
