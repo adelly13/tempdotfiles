@@ -48,6 +48,7 @@ let g:coc_global_extensions = [
   \ 'coc-java',
 	\ 'coc-jedi',
 	\ 'coc-json',
+  \ 'coc-pairs',
   \ 'coc-svelte',
   \ 'coc-snippets',
 	\ 'coc-tailwindcss',
@@ -65,7 +66,7 @@ let g:vimtex_quickfix_mode=0
 
 " snippets
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
-let g:UltiSnipsExpandTrigger = '<leader>,'
+let g:UltiSnipsExpandTrigger = '<C-k>'
 let g:UltiSnipsJumpForwardTrigger = '<C-n>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 

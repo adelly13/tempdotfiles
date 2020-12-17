@@ -24,6 +24,7 @@ alias la='ls -a'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
+alias gd='git diff'
 
 # C++ shortcuts
 alias gpp='g++-10'
