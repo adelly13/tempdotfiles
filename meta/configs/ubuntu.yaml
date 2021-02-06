@@ -1,0 +1,6 @@
+- shell:
+  - [/bin/bash -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash" && source ~/.zshrc, Installing NVM]
+  - [nvm install lts/fermium, Installing Node]
+  - [nvm use 14.15.4, Using latest install of node]
+  - [npm install --global yarn, Installing Node]
+
