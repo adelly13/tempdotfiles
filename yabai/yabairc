@@ -8,7 +8,9 @@ yabai -m rule --add app="^Spotify$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Notes$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Reminders$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Dictionary$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Preview$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Font Book$" sticky=on layer=above manage=off
+# yabai -m rule --add app="^Inkscape$" sticky=on layer=above manage=off
+# yabai -m rule --add app="^Preview$" sticky=on layer=above manage=off
 yabai -m rule --add app="^TextEdit$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Messages$" sticky=on layer=above manage=off
 

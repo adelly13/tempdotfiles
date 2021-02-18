@@ -6,6 +6,25 @@ hs.hotkey.bind(hyper, "0", function()
   hs.reload()
 end)
 
+-- Fullscreen and Window Management 
+hs.hotkey.bind(hyper, "return", function()
+  local win = hs.window.frontmostWindow()
+	win:setFullscreen(not win:isFullscreen())
+end)
+
+hs.hotkey.bind(hyper, "'", function()
+	local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+	
+	f.x = max.x + (max.w / 16) 
+  f.y = max.y
+  f.w = max.w * (7 / 8) 
+  f.h = max.h
+  win:setFrame(f)
+end)
+
 -- App Shortcuts
 local applicationHotkeys = {
 	b = 'Brave Browser',

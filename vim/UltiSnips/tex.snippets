@@ -4,7 +4,10 @@
 snippet newdoc "scaffold new document" bA
 \documentclass{article}
 \usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[section]{placeins}
+\usepackage{tikzit}
 
+\input{./figures/styles.tikzstyles}
 \title{$1}
 \date{`date +%F`}
 \author{Tanay Biradar}
@@ -15,6 +18,15 @@ snippet newdoc "scaffold new document" bA
   $0
 
 \end{document}
+endsnippet
+
+snippet fig "insert figure" bA
+\begin{figure}[!htb]
+	\ctikzfig{$0}
+		\centering
+		\caption{$1}
+		\label{fig:$1}
+\end{figure}
 endsnippet
 
 
@@ -70,7 +82,6 @@ while True:
 snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}$0
 endsnippet
-
 
 snippet __ "subscript" iA
 _{$1}$0
