@@ -3,3 +3,5 @@ plugged/
 autoload/
 spell/
 .netrwhist
+.ssh/config
+

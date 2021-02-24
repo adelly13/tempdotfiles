@@ -66,5 +66,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export GOPATH="$HOME/.go"
-export JDK_HOME="/usr/local/opt/openjdk/bin/java"
-export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$PATH"
+export JDK_HOME="/usr/local/opt/openjdk"
+export PATH="${JDK_HOME}/bin:/usr/local/sbin:$PATH"
