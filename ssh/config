@@ -5,6 +5,9 @@ Host vm
   HostName simfony.tech
   Port 22002
   User tanay
+Host azure
+  HostName 52.183.62.123
+  User tanay
 Host *
 	AddKeysToAgent yes
 	IdentityFile ~/.ssh/id_rsa
