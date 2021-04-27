@@ -7,5 +7,6 @@ autocmd FileType python nnoremap <silent> <C-e> :cd %:p:h <CR> :! python3 %:t<CR
 autocmd FileType cpp nnoremap <silent> <C-e> :cd %:p:h <CR> :! crun %:t:r<CR>
 autocmd FileType go nnoremap <silent> <C-e> :cd %:p:h <CR> :! go run %:t<CR>
 autocmd FileType markdown,tex set spell spelllang=en_us,cjk
+au! BufNewFile,BufRead *.svelte set ft=html
  " auto spell fix
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
