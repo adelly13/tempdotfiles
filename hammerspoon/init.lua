@@ -27,12 +27,12 @@ end)
 
 -- App Shortcuts
 local applicationHotkeys = {
+	a = 'Athens',
 	b = 'Brave Browser',
 	d = 'Discord',
 	f = 'Finder',
 	i = 'Messages',
 	m = 'Mochi',
-	p = 'Dropbox Paper',
 	r = 'Reminders',
 	s = 'Music',
 	t = 'Terminal',
