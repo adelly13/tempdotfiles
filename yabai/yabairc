@@ -12,6 +12,7 @@ yabai -m rule --add app="^Font Book$" sticky=on layer=above manage=off
 # yabai -m rule --add app="^Inkscape$" sticky=on layer=above manage=off
 # yabai -m rule --add app="^Preview$" sticky=on layer=above manage=off
 yabai -m rule --add app="^TextEdit$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Todoist$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Messages$" sticky=on layer=above manage=off
 
 # ====== Variables =============================
