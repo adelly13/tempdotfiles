@@ -4,4 +4,4 @@ autoload/
 spell/
 .netrwhist
 .ssh/config
-
+.gitconfig

@@ -62,6 +62,13 @@ nnoremap <silent> <leader>r :Rg<CR>
 " latex
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
+let g:vimtex_syntax_conceal_default = 0
+let g:vimtex_syntax_conceal = {
+    \ 'fancy': 1,
+    \ 'greek': 1,
+    \ 'math_delimiters': 1,
+    \ 'styles': 1,
+  \}
 
 " snippets
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']

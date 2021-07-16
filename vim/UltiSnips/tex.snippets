@@ -1,5 +1,42 @@
 # https://castel.dev/post/lecture-notes-1/#using-ultisnips-to-create-snippets
 
+snippet ssp "pset template for SSP" bA
+\documentclass{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[section]{placeins}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Tanay Biradar}
+\rfoot{\thepage}
+
+\title{$1}
+\date{`date +%F`}
+\author{Tanay Biradar}
+
+\begin{document}
+  \begin{center}
+    \Large{\textbf{$1}}
+  \end{center}
+
+  \rhead{$1 Problem 1}
+
+  \section{Problem 1}
+    \subsection{Problem 1a}
+		$0
+
+    In collaboration with
+
+  \newpage
+  \rhead{$1 Problem 2}
+
+\end{document}
+endsnippet
+
 
 snippet newdoc "scaffold new document" bA
 \documentclass{article}
