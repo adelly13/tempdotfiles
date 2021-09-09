@@ -46,7 +46,7 @@ let g:coc_global_extensions = [
 	\ 'coc-emmet',
 	\ 'coc-html',
   \ 'coc-java',
-	\ 'coc-pyright',
+	\ 'coc-jedi',
 	\ 'coc-json',
   \ 'coc-pairs',
   \ 'coc-snippets',

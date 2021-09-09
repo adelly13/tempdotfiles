@@ -5,3 +5,4 @@ spell/
 .netrwhist
 .ssh/config
 .gitconfig
+*.swp

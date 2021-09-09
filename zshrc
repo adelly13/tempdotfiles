@@ -73,3 +73,5 @@ export NVM_DIR="$HOME/.nvm"
 export GOPATH="$HOME/.go"
 export JDK_HOME="/usr/local/opt/openjdk"
 export PATH="${JDK_HOME}/bin:/usr/local/sbin:$PATH"
+
+alias java8='/usr/libexec/java_home -v1.8 --exec java'

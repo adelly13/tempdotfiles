@@ -1,20 +1,6 @@
-Host azure
-  HostName 52.183.62.123
-  User tanay
-Host vm
-  HostName simfony.tech
-  Port 22002
-  User tanay
 Host tanpi
   HostName vault.tanaybiradar.com
   User tanay
-Host pc
-  HostName 192.168.1.34
-  User tanay
-Host dpi
-  HostName 73.189.19.13
-  Port 220
-  User pi
 Host *
 	AddKeysToAgent yes
 	IdentityFile ~/.ssh/id_rsa
