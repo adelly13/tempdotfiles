@@ -1,6 +1,0 @@
-Host tanpi
-  HostName vault.tanaybiradar.com
-  User tanay
-Host *
-	AddKeysToAgent yes
-	IdentityFile ~/.ssh/id_rsa
