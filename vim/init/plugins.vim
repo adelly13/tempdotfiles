@@ -34,7 +34,9 @@ call plug#end()
 " ------------------
 " Plugin Preferences
 " ------------------
+set termguicolors
 colorscheme nord
+set background=dark
 let g:lightline = {'colorscheme': 'nord'} " status line color
 
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>:set nu rnu<CR>

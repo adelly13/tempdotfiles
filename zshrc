@@ -12,6 +12,9 @@ ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true # Fixes some permissions issues
 source $ZSH/oh-my-zsh.sh
 
+# Colors
+export TERM=xterm-256color
+
 # Editor
 export EDITOR="vim"
 alias v='vim'
