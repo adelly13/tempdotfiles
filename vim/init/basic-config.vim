@@ -15,6 +15,7 @@ nnoremap <silent> <leader>s :w<CR> " easy save
 noremap <silent> <leader>h :nohlsearch<CR>	" stop search highlighting
 set clipboard=unnamed " use system clipboard
 vnoremap <silent> <leader>s :sort<CR>	" easy sorting
+set belloff=all
 
 
 " ------
